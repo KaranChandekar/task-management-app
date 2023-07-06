@@ -1,3 +1,4 @@
+import { TodosProvider } from "@/store/todos";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <TodosProvider>{children}</TodosProvider>
+      </body>
     </html>
   );
 }

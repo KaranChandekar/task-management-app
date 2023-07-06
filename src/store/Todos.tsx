@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, createContext, useContext, useState } from "react";
 
 export type Todo = {
@@ -14,7 +16,7 @@ export type TodosContext = {
 
 export const TodosContext = createContext<TodosContext | null>(null);
 
-export const TodosProvider = (children: { children: ReactNode }) => {
+export const TodosProvider = ({ children }: { children: ReactNode }) => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const handleAddTodo = (task: string) => {
