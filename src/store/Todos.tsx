@@ -31,4 +31,10 @@ export const TodosProvider = (children: { children: ReactNode }) => {
       return newTodos;
     });
   };
+
+  return (
+    <TodosContext.Provider value={{ todos, handleAddTodo }}>
+      {children}
+    </TodosContext.Provider>
+  );
 };
