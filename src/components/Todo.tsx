@@ -3,7 +3,7 @@
 import { useTodos } from "@/store/todos";
 
 const Todo = () => {
-  const { todos } = useTodos();
+  const { todos, toggleTodoAsCompleted } = useTodos();
   console.log(todos);
 
   let filteredTodos = todos;
@@ -17,6 +17,7 @@ const Todo = () => {
               type="checkbox"
               id={`todo-${todo.id}`}
               checked={todo.isCompleted}
+              onChange={() => toggleTodoAsCompleted(todo.id)}
             />
             <label htmlFor={`todo-${todo.id}`}>{todo.task}</label>
             {todo.isCompleted && <button type="button">Delete</button>}
