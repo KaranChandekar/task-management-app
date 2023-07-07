@@ -42,10 +42,10 @@ export const TodosProvider = ({ children }: { children: ReactNode }) => {
 };
 
 // Context api
-export const useTodos = () => {
+export function useTodos() {
   const todosContextValue = useContext(TodosContext);
   if (!todosContextValue) {
     throw new Error("UseTodos used outside of the Provider");
   }
   return todosContextValue;
-};
+}
