@@ -3,7 +3,7 @@
 import { useTodos } from "@/store/todos";
 
 const Todo = () => {
-  const { todos, toggleTodoAsCompleted } = useTodos();
+  const { todos, toggleTodoAsCompleted, handleTodoDeleted } = useTodos();
   console.log(todos);
 
   let filteredTodos = todos;
@@ -20,7 +20,11 @@ const Todo = () => {
               onChange={() => toggleTodoAsCompleted(todo.id)}
             />
             <label htmlFor={`todo-${todo.id}`}>{todo.task}</label>
-            {todo.isCompleted && <button type="button">Delete</button>}
+            {todo.isCompleted && (
+              <button type="button" onClick={() => handleTodoDeleted(todo.id)}>
+                Delete
+              </button>
+            )}
           </li>
         );
       })}
