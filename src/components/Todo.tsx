@@ -4,7 +4,6 @@ import { useTodos } from "@/store/todos";
 
 const Todo = () => {
   const { todos, toggleTodoAsCompleted, handleTodoDeleted } = useTodos();
-  console.log(todos);
 
   let filteredTodos = todos;
 
