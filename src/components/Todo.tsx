@@ -2,6 +2,7 @@
 
 import { useTodos } from "@/store/todos";
 import { useSearchParams } from "next/navigation";
+import { FiTrash2 } from "react-icons/fi";
 
 const Todo = () => {
   const { todos, toggleTodoAsCompleted, handleTodoDeleted } = useTodos();
@@ -29,7 +30,7 @@ const Todo = () => {
             <label htmlFor={`todo-${todo.id}`}>{todo.task}</label>
             {todo.isCompleted && (
               <button type="button" onClick={() => handleTodoDeleted(todo.id)}>
-                Delete
+                Delete <FiTrash2 />
               </button>
             )}
           </li>
