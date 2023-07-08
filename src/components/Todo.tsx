@@ -1,6 +1,6 @@
 "use client";
 
-import { useTodos } from "@/store/todos";
+import { useTodos } from "../store/Todos";
 import { useSearchParams } from "next/navigation";
 import { FiTrash2 } from "react-icons/fi";
 

@@ -1,4 +1,4 @@
-import { TodosProvider } from "@/store/todos";
+import { TodosProvider } from "../store/Todos";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
