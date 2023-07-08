@@ -9,22 +9,34 @@ const Navbar = () => {
   console.log("Navbar " + todosFilter);
 
   return (
-    <nav>
+    <nav className="w-[550px] flex items-center justify-between border-b border-solid border-[#ccc]">
       <Link
         href="/"
-        className={todosFilter === null ? "active" : "text-red-500"}
+        className={`${
+          todosFilter === null
+            ? "border-violet-600 hover:border-violet-600"
+            : ""
+        } text-xl border-solid border-b-4 border-transparent hover:border-gray-500`}
       >
         All
       </Link>
       <Link
         href="/?todos=active"
-        className={todosFilter === "active" ? "text-red-500" : ""}
+        className={`${
+          todosFilter === "active"
+            ? "border-violet-600 hover:border-violet-600"
+            : ""
+        } text-xl border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
       >
         Active
       </Link>
       <Link
         href="/?todos=completed"
-        className={todosFilter === "completed" ? "text-red-500" : ""}
+        className={`${
+          todosFilter === "completed"
+            ? "border-violet-600 hover:border-violet-600"
+            : ""
+        } text-xl border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
       >
         Completed
       </Link>
