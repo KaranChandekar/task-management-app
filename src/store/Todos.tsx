@@ -20,8 +20,13 @@ export const TodosContext = createContext<TodosContext | null>(null);
 
 export const TodosProvider = ({ children }: { children: ReactNode }) => {
   const [todos, setTodos] = useState<Todo[]>(() => {
-    const newTodos = localStorage.getItem("todos") || "[]";
-    return JSON.parse(newTodos) as Todo[];
+    if (typeof localStorage !== "undefined") {
+      const storedTodos = localStorage.getItem("todos");
+      if (storedTodos) {
+        return JSON.parse(storedTodos) as Todo[];
+      }
+    }
+    return [];
   });
 
   const handleAddTodo = (task: string) => {
@@ -35,12 +40,13 @@ export const TodosProvider = ({ children }: { children: ReactNode }) => {
         },
         ...prev,
       ];
-      localStorage.setItem("todos", JSON.stringify(newTodos));
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem("todos", JSON.stringify(newTodos));
+      }
       return newTodos;
     });
   };
 
-  // If the task is completed
   const toggleTodoAsCompleted = (id: string) => {
     setTodos((prev) => {
       const newTodos = prev.map((task) => {
@@ -49,16 +55,19 @@ export const TodosProvider = ({ children }: { children: ReactNode }) => {
         }
         return task;
       });
-      localStorage.setItem("todos", JSON.stringify(newTodos));
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem("todos", JSON.stringify(newTodos));
+      }
       return newTodos;
     });
   };
 
-  // If the task is deleted
   const handleTodoDeleted = (id: string) => {
     setTodos((prev) => {
       const newTodos = prev.filter((task) => task.id !== id);
-      localStorage.setItem("todos", JSON.stringify(newTodos));
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem("todos", JSON.stringify(newTodos));
+      }
       return newTodos;
     });
   };
@@ -72,11 +81,10 @@ export const TodosProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Context api
 export function useTodos() {
   const todosContextValue = useContext(TodosContext);
   if (!todosContextValue) {
-    throw new Error("UseTodos used outside of the Provider");
+    throw new Error("useTodos used outside of the Provider");
   }
   return todosContextValue;
 }
