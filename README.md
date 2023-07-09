@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📝 Task Management App
 
-## Getting Started
+Task Management App is a web application built with Next.js, TypeScript, Tailwind CSS, and Local Storage. It provides an intuitive user interface for managing tasks effectively.
 
-First, run the development server:
+## ⚙️ Technology Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **Framework**: Next.js
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: Local Storage
+- **Version Control**: Git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run the Task Management App locally, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository: `git clone https://github.com/KaranChandekar/task-management-app.git`
+2. Navigate to the project directory: `cd task-management-app`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open `http://localhost:3000` in your browser.
 
-## Learn More
+## 💡 Usage
 
-To learn more about Next.js, take a look at the following resources:
+The Task Management App allows you to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- View a list of tasks.
+- Add a new task by providing a title.
+- Delete a task.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🌐 Live Demo
 
-## Deploy on Vercel
+A live demo of the Task Management App is available at [taskmanagement-karanchandekar.vercel.app](https://taskmanagement-karanchandekar.vercel.app/).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Functionality
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Task Management App have following functionalities:
+
+- Title: A title describing the task.
+- Status: The current status of the task (e.g., "To Do", "In Progress", "Completed").
+- CRUD: Functionality to perform CRUD (Create, Read, Update, Delete).
+- Stores the task data using local storage.
+
+## 📄 Project Structure
+
+The repository follows the following structure:
+
+- `/public`: Contains public assets and the app's logo.
+- `/src`: Contains children folders like "app", "components", and "store".
+- `/src/app`: Contains the main page of the application.
+- `/src/components`: Contains reusable components used throughout the application.
+- `/src/store`: Contains the MST models and store for state management.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to contribute to the Task Management App, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b my-feature-branch`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin my-feature-branch`.
+5. Submit a pull request.
+
+Please ensure that your code follows the established coding standards and includes appropriate documentation.
+
+## 📄 License
+
+The Task Management App is open source and released under the [MIT License](https://github.com/KaranChandekar/task-management-app/blob/main/LICENSE).
+
+## 📧 Contact
+
+For any questions, suggestions, or feedback, feel free to reach out to me at karanchandekar431@gmail.com. I'd love to hear from you!
