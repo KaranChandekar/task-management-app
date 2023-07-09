@@ -9,14 +9,14 @@ const Navbar = () => {
   console.log("Navbar " + todosFilter);
 
   return (
-    <nav className="w-[550px] flex items-center justify-between border-b border-solid border-[#ccc]">
+    <nav className="sm:w-[550px] w-full flex items-center justify-between border-b border-solid border-[#ccc]">
       <Link
         href="/"
         className={`${
           todosFilter === null
-            ? "border-violet-600 hover:border-violet-600"
+            ? "border-violet-600 text-gray-800 font-semibold hover:border-violet-600"
             : ""
-        } text-xl border-solid border-b-4 border-transparent hover:border-gray-500`}
+        } md:text-xl text-gray-500 border-solid border-b-4 border-transparent hover:border-gray-500`}
       >
         All
       </Link>
@@ -24,9 +24,9 @@ const Navbar = () => {
         href="/?todos=active"
         className={`${
           todosFilter === "active"
-            ? "border-violet-600 hover:border-violet-600"
+            ? "border-violet-600 text-gray-800 font-semibold hover:border-violet-600"
             : ""
-        } text-xl border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
+        } md:text-xl text-gray-500 border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
       >
         Active
       </Link>
@@ -34,9 +34,9 @@ const Navbar = () => {
         href="/?todos=completed"
         className={`${
           todosFilter === "completed"
-            ? "border-violet-600 hover:border-violet-600"
+            ? "border-violet-600 text-gray-800 font-semibold hover:border-violet-600"
             : ""
-        } text-xl border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
+        } md:text-xl text-gray-500 border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
       >
         Completed
       </Link>
