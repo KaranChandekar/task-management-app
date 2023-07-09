@@ -9,8 +9,8 @@ const AddTodo = () => {
   const { handleAddTodo } = useTodos();
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    handleAddTodo(todo);
+    e.preventDefault()
+    todo.length === 0 ? return : handleAddTodo(todo);
     setTodo("");
   };
 
