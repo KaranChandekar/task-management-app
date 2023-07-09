@@ -18,7 +18,7 @@ const Navbar = () => {
             : ""
         } md:text-xl text-gray-500 border-solid border-b-4 border-transparent hover:border-gray-500`}
       >
-        All
+        To Do
       </Link>
       <Link
         href="/?todos=active"
@@ -28,7 +28,7 @@ const Navbar = () => {
             : ""
         } md:text-xl text-gray-500 border-b-4 border-transparent border-solid border-6 hover:border-gray-500`}
       >
-        Active
+        In Progress
       </Link>
       <Link
         href="/?todos=completed"
