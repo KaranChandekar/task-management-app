@@ -10,6 +10,10 @@ const AddTodo = () => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (todo.length === 0) {
+      alert("Cant add empty todo");
+      return;
+    }
     handleAddTodo(todo);
     setTodo("");
   };
@@ -25,8 +29,7 @@ const AddTodo = () => {
       />
       <button
         type="submit"
-        className="bg-violet-600 hover:bg-violet-700 md:px-7 px-3 py-2 rounded md:ml-6 ml-2 text-white font-bold text-sm md:text-base"
-      >
+        className="bg-violet-600 hover:bg-violet-700 md:px-7 px-3 py-2 rounded md:ml-6 ml-2 text-white font-bold text-sm md:text-base">
         ADD
       </button>
     </form>
